@@ -120,7 +120,8 @@ public class TocHw3
 	
 			}
 		}
-		System.out.println(average(moneyint));	
+		if( moneyint.length==0 )System.out.println("找不到這個資料");
+		else System.out.println(average(moneyint));	
 //		System.out.println(countcity);
 //		System.out.println(countroad);
 //		System.out.println(countyearmonth);
