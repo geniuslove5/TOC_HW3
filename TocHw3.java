@@ -1,3 +1,9 @@
+//F74001195 陳境圃
+/*
+	先把東西讀下來
+	存成字串
+	再來用一些字串分析和判斷即可作出答案
+*/
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
