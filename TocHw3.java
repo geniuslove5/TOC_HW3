@@ -26,17 +26,26 @@ public class TocHw3
 
         public static String readFromUrl(String url) throws IOException
         {
-                InputStream is = new URL(url).openStream();
                 try
-                {
-                        BufferedReader rd = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
-                        String jsonText = readAll(rd);
-			return jsonText;
-                }
-                finally
-                {
-                        is.close();
-                }
+		{
+			InputStream is = new URL(url).openStream();
+                	try
+                	{
+                        	BufferedReader rd = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
+                        	String jsonText = readAll(rd);
+				return jsonText;
+                	}
+                	finally
+                	{
+                        	is.close();
+                	}
+		}
+		catch(IOException e)
+		{
+			System.out.println("找不到這個網址");
+			System.exit(1);
+		}
+		return "";
         }
 	public static int average(int[] n)
 	{
@@ -47,6 +56,11 @@ public class TocHw3
 
 	public static void main(String[] args) throws IOException
 	{
+		if(args.length<4)
+		{
+			System.out.println("number of arguements is wrong");
+			return;
+		}
 		String str = readFromUrl(args[0]);
 //		System.out.println(str);
 		String city = args[1];
